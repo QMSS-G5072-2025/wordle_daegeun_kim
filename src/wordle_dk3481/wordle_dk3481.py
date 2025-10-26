@@ -1,4 +1,4 @@
-def validate_guess(guess, word_length=5):
+def validate_guess(guess, word_length=5) -> bool:
     """
     Validates if a guess is valid for Wordle.
 
@@ -85,7 +85,7 @@ def check_guess(secret_word, guess):
     return result
 
 
-def is_valid_word(word, word_list):
+def is_valid_word(word, word_list) -> bool:
     """
     Checks if a word exists in the valid word list.
 
@@ -104,7 +104,7 @@ def is_valid_word(word, word_list):
     return word.lower() in [w.lower() for w in word_list]
 
 
-def calculate_game_score(guesses_used, max_guesses=6):
+def calculate_game_score(guesses_used, max_guesses=6) -> int:
     """
     Calculates the score for a completed Wordle game.
 

@@ -4,6 +4,19 @@
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+import sys
+import os
+
+for path in sys.path:
+    if path == '' or path == '.':
+        print(f"Current directory: {os.getcwd()}")
+    elif 'site-packages' in path or 'lib' in path or 'Frameworks' in path:
+        print(f"Standard library or site-packages: {path}")
+    elif path == '/usr/bin' or path.startswith('/usr/lib'):
+        print(f"System directory: {path}")
+    else:
+        print(f"Custom or user-defined path: {path}")
+
 # -- Project information -----------------------------------------------------
 
 project = u"wordle_dk3481"
